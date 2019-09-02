@@ -28,6 +28,7 @@ class AsyncApiDumpCommand extends Command
 	{
 		$this->addArgument('generator', InputArgument::REQUIRED, 'Generator id');
 		$this->addOption('output', null, InputOption::VALUE_REQUIRED, 'Dump output', 'stdout://');
+		$this->addOption('format', null, InputOption::VALUE_REQUIRED, 'Format of dump', 'yaml');
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output)
@@ -38,6 +39,13 @@ class AsyncApiDumpCommand extends Command
 
 		$arr = $doc->getArray();
 
-		$output->writeln(Yaml::dump($arr, 5));
+		if ('json' === $input->getOption('format'))
+		{
+			$output->writeln(json_encode($arr, JSON_PRETTY_PRINT));
+		}
+		else
+		{
+			$output->writeln(Yaml::dump($arr, 5));
+		}
 	}
 }

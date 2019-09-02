@@ -76,5 +76,21 @@ final class MessageDocument
 		];
 	}
 
+	/**
+	 * @return mixed
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getPayloadSchema(): array
+	{
+		return $this->payload;
+	}
+
 
 }
