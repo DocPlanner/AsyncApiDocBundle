@@ -1,0 +1,17 @@
+{
+    "name": "docplanner/asyncapi-doc-bundle",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Docplanner\\AsyncApiDocBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Radek Baczynski",
+            "email": "radek.baczynski@gmail.com"
+        }
+    ],
+    "require": {}
+}

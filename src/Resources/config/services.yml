@@ -1,0 +1,10 @@
+services:
+    docplanner_async_api_doc.dump_command:
+        class: Docplanner\AsyncApiDocBundle\Command\AsyncApiDumpCommand
+        arguments:
+            - '@docplanner_async_api_doc.document_generator_list'
+        tags:
+          - { name: console.command }
+    docplanner_async_api_doc.document_generator_list:
+        class: Docplanner\AsyncApiDocBundle\AsyncApi\Generator\GeneratorList
+
