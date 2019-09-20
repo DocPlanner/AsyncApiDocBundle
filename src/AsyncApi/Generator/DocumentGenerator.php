@@ -29,7 +29,7 @@ class DocumentGenerator
 
 	public function generateAsyncApiDocument(): AsyncApiDocument
 	{
-		$document        = new AsyncApiDocument($this->id, $this->name);
+		$document        = new AsyncApiDocument($this->id, $this->name, date(DATE_ISO8601));
 		$messageRegistry = new MessageRegistry;
 		$channelRegistry = new ChannelRegistry;
 
